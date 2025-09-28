@@ -10,6 +10,7 @@
 支持部署在 Serv00 免费主机
 
 
+
 ## 📋 功能概览
 抓取 Hax 和 Woiden 的 VPS 创建页面
 
@@ -24,12 +25,14 @@
 支持静默模式（无库存时不推送）
 
 
+
 ## 📁 文件结构
 代码
 hax-woiden/
 ├─ bot.py           # 主脚本：抓取库存并推送 Telegram
 ├─ run.log          # 自动生成的运行日志（由 cron 写入）
 ├─ README.md        # 使用说明
+
 
 
 ## 🧰 环境要求
@@ -40,12 +43,14 @@ Python 3（Sev00 这次）
 pip install requests beautifulsoup4
 
 
+
 ## ⚙️ 配置说明
 在 bot.py 中设置以下内容：
 
 BOT_TOKEN = "你的 Telegram Bot Token"
 CHAT_ID = "你的频道或用户 ID"
 你可以通过 @BotFather 创建机器人，并获取 BOT_TOKEN。 使用 @userinfobot 获取你的 CHAT_ID 或频道 ID。
+
 
 
 ## 🕒 Serv00 定时任务设置（FreeBSD）
@@ -61,6 +66,7 @@ bash /usr/local/bin/python3 /usr/home/yourname/yourdirectory/bot.py >> /usr/home
 这将每分钟运行一次脚本，并将输出写入 run.log。
 
 
+
 ## 🔕 静默或广播模式
 
 ### 静默模式：
@@ -70,6 +76,7 @@ bash /usr/local/bin/python3 /usr/home/yourname/yourdirectory/bot.py >> /usr/home
 ### 广播模式：
 
 下载monitor目录下的bot.py
+
 
 
 ## 🧪 示例推送格式
