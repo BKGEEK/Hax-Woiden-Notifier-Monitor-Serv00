@@ -26,7 +26,7 @@
 ## 📁 文件结构
 
 ```
-hax-woiden/
+Hax-Woiden-Notifier-Monitor-Serv00/
 ├─ notifier/        # 静默模式目录
 │  └─ bot.py        # 静默模式脚本（无库存时不推送）
 ├─ monitor/         # 广播模式目录
