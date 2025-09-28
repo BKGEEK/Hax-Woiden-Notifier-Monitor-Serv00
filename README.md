@@ -27,7 +27,10 @@
 
 ```
 hax-woiden/
-├─ bot.py           # 主脚本：抓取库存并推送 Telegram
+├─ notifier/        # 静默模式目录
+│  └─ bot.py        # 静默模式脚本（无库存时不推送）
+├─ monitor/         # 广播模式目录
+│  └─ bot.py        # 广播模式脚本（有无库存都会推送）
 ├─ run.log          # 自动生成的运行日志（由 cron 写入）
 ├─ README.md        # 使用说明
 ```
@@ -66,9 +69,13 @@ CHAT_ID = "你的频道或用户 ID"
 
 ### 示例命令
 
+时间自行配置
+
 ```bash
-bash /usr/local/bin/python3 /usr/home/yourname/yourdirectory/bot.py >> /usr/home/yourname/yourdirectory/run.log 2>&1
+bash /usr/local/bin/python3 /usr/home/yourname/yourdirectory/notifier/bot.py >> /usr/home/yourname/yourdirectory/run.log 2>&1
 ```
+
+> 将路径替换为你实际的脚本目录。
 
 该任务会每分钟运行一次脚本，并将输出写入 `run.log`。
 
@@ -76,8 +83,8 @@ bash /usr/local/bin/python3 /usr/home/yourname/yourdirectory/bot.py >> /usr/home
 
 ## 🔕 静默与广播模式
 
-* **静默模式**：下载 `notifier/` 目录下的 `bot.py`（无库存时不推送）
-* **广播模式**：下载 `monitor/` 目录下的 `bot.py`（无论有无库存均推送）
+* **静默模式**：运行 `notifier/bot.py`（无库存时不推送）
+* **广播模式**：运行 `monitor/bot.py`（无论有无库存均推送）
 
 ---
 
