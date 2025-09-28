@@ -63,7 +63,7 @@ CHAT_ID = "你的频道或用户 ID"
 
 ---
 
-## 🕒 Serv00 定时任务设置（FreeBSD）
+## 🕒 Serv00 定时任务设置
 
 在 Serv00 面板中添加 **Cron Job**：
 
