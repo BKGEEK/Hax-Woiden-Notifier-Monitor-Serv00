@@ -8,7 +8,7 @@ DOMAINS = {
 }
 
 BOT_TOKEN = "example"   # ← 替换为你的 Telegram Bot Token
-CHAT_ID = "example"      # ← 替换为你的频道或用户 ID
+CHAT_ID = "example"     # ← 替换为你的频道或用户 ID
 HEADERS = {
     "User-Agent": "Mozilla/5.0"
 }
@@ -32,7 +32,7 @@ def fetch_available(name, url):
                 valid.append(text)
         return valid
     except Exception as e:
-        print(f"[ERROR] {name} fetch failed: {e}")
+        print(f"[ERROR] {name} 抓取失败: {e}")
         return []
 
 # === Telegram 推送 ===
@@ -42,7 +42,7 @@ def send_telegram(msg):
     try:
         requests.post(url, json=payload, timeout=TIMEOUT)
     except Exception as e:
-        print(f"[ERROR] Telegram failed: {e}")
+        print(f"[ERROR] Telegram 推送失败: {e}")
 
 # === 主流程 ===
 def main():
@@ -52,11 +52,11 @@ def main():
         for dc in available:
             lines.append(f"- {name}: {dc}")
 
-if lines:
-    msg = "✅ 有VPS\n" + "\n".join(lines)
-    send_telegram(msg)
-else:
-    print("[INFO] 无VPS，不发送消息")
+    if lines:
+        msg = "✅ 有VPS\n" + "\n".join(lines)
+        send_telegram(msg)
+    else:
+        print("[INFO] 无VPS，不发送消息")
 
 if __name__ == "__main__":
     main()
