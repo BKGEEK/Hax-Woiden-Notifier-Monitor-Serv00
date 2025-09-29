@@ -95,7 +95,7 @@ bash /usr/local/bin/python3 /usr/home/yourname/yourdirectory/notifier/bot.py >> 
 ```
 ✅ 有 VPS
 - Hax: US-OpenVZ-2
-- Woiden: EU-1-Germany OpenVZ Hetzner SSD Dedicated IPv6
+- Woiden: EU-1 - Germany - Hetzner - SSD + Dedicated IPv6
 ```
 
 **无库存（如启用推送）：**
